@@ -14,7 +14,6 @@ body {
 .container {
     margin: 0 auto;
     padding: 0 5px;
-    width: 1320px;
     display: flex;
     justify-content: center;
     animation: flay 10s ease-in-out infinite;
@@ -262,5 +261,33 @@ body {
     }
     100% {
         transform: translate(0,30px);
+    }
+}
+@media (max-width: 1020px) {
+    .card-github .card {
+        width: 705px;
+    }
+}
+@media (max-width: 764px) {
+    .card-github .card {
+        flex-direction: column;
+        width: 375px;
+    }
+    .repos {
+        margin-top: 20px;
+        align-items: center;
+    }
+    .repos div{
+        margin-top: 20px;
+        align-items: center;
+    }
+    .repos div::after {
+        display: none;
+    }
+    .fly {
+        display: none;
+    }
+    * {
+        font-size: 16px;
     }
 }
