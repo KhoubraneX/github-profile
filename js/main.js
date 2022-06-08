@@ -13,6 +13,7 @@ $(function(){
                 creatCrad(data)
                 setRepos(data.repos_url)
                 refreshAnimation()
+                console.log(data);
             },
             error: function(error) {
                 showError(error.status)
@@ -41,6 +42,10 @@ $(function(){
 
     function creatCrad(data) {
         $(".info img.av").attr("src" , data.avatar_url).css("border-radius" , "50%")
+        $(".info a").attr({
+            "href" : data.html_url,
+            "target" : "_blank"
+        })
         $(".info .name").html(data.name || data.login)
         $(".n-status .foll-er").html(data.followers)
         $(".n-status .foll-ing").html(data.following)
@@ -57,6 +62,8 @@ $(function(){
             }
         })
     }
+
+    $("form").submit()
 
     function showError(errorStatus) {
         if (errorStatus === 404) {
